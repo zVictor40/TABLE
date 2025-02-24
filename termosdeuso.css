@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('floresta.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+}
+
+header {
+    background: rgba(13, 126, 32, 0.8);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border-radius: 8px;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    padding-left: 10px;
+}
+
+header nav {
+    display: flex;
+    gap: 20px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    color: #333;
+    line-height: 1.6;
+}
+
+main h2 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #0d7e20;
+}
+
+main p, main li {
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: #0d7e20;
+    color: rgb(253, 253, 253);
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    margin-top: 40px;
+    border-radius: 40px;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin: 5px 0;
+}
+ 
+footer p {
+    margin: 5px 0;
+}
+
+footer ul li:hover {
+    text-decoration: underline;
+}

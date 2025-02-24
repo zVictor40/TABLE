@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website - Autoria Web</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo ao nosso site</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="desenvolvedores.html">Desenvolvedores</a></li>
+                <li><a href="termosdeuso.html">Termos de uso</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Cadastro</h2>
+            <form id="cadastroForm" onsubmit="event.preventDefault(); adicionarRegistro();">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" required placeholder="exemplo@dominio.com">
+                
+                <button type="submit">Gravar</button>
+            </form>
+        </section>
+        
+        <section>
+            <h2>Registros de pessoas cadastradas para o Bolsa Família</h2>
+            <table>
+                <caption>Lista de Cadastros</caption>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaDados">
+                    <!-- Os dados serão inseridos pelo usuário -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    
+    <footer>
+        <p>IFRN Campus Santa Cruz</p>
+        <p>Trabalho de Autoria Web</p>
+        <p>Prof. Marcelo Figueiredo Barbosa Júnior</p>
+        <p>Desenvolvido por: Fabrício Gabriel Maximino Gomes da Silva e João Victor do Nascimento</p>
+    </footer>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            function adicionarRegistro() {
+                let nome = document.getElementById("nome").value;
+                let email = document.getElementById("email").value;
+
+                if (nome.trim() === "" || email.trim() === "") {
+                    alert("Por favor, preencha todos os campos!");
+                    return;
+                }
+
+                // Expressão regular para validar email
+                let regexEmail = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
+
+                if (!regexEmail.test(email)) {
+                    alert("Por favor, insira um email válido.");
+                    return;
+                }
+
+                let tabela = document.getElementById("tabelaDados");
+                let linhas = tabela.getElementsByTagName("tr");
+
+                if (linhas.length >= 10) {
+                    tabela.deleteRow(0);
+                }
+
+                let novaLinha = tabela.insertRow();
+                let celulaNome = novaLinha.insertCell(0);
+                let celulaEmail = novaLinha.insertCell(1);
+
+                celulaNome.textContent = nome;
+                celulaEmail.textContent = email;
+
+                document.getElementById("cadastroForm").reset();
+            }
+
+            window.adicionarRegistro = adicionarRegistro;
+        });
+    </script>
+</body>
+</html>
