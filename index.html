@@ -1,99 +1,136 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website - Autoria Web</title>
+    <title>Página Inicial</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script defer src="script.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <header>
-        <h1>Bem-vindo ao nosso site</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="desenvolvedores.html">Desenvolvedores</a></li>
-                <li><a href="termosdeuso.html">Termos de uso</a></li>
-            </ul>
+<body class="container">
+    <header class="bg-primary text-white text-center p-3">
+        <h1>Site do bolsa famia</h1>
+        <nav class="nav justify-content-center">
+            <a class="nav-link text-white" href="index.html">Início</a>
+            <a class="nav-link text-white" href="desenvolvedores.html">Desenvolvedores</a>
         </nav>
     </header>
-    
-    <main>
-        <section>
-            <h2>Cadastro</h2>
-            <form id="cadastroForm" onsubmit="event.preventDefault(); adicionarRegistro();">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" required placeholder="exemplo@dominio.com">
-                
-                <button type="submit">Gravar</button>
+    <main class="mt-4">
+        <section class="mb-4">
+            <h2 class="text-center">Cadastro para o bolsa famia, pode colocar seus dados</h2>
+            <form id="cadastro-form" class="row g-3">
+                <div class="col-md-6">
+                    <label for="nome" class="form-label">Nome:</label>
+                    <input type="text" id="nome" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="email" class="form-label">E-mail:</label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+                <div class="col-12 text-center">
+                    <button type="submit" class="btn btn-success">Gravar</button>
+                </div>
             </form>
         </section>
-        
         <section>
-            <h2>Registros de pessoas cadastradas para o Bolsa Família</h2>
-            <table>
-                <caption>Lista de Cadastros</caption>
-                <thead>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Email</th>
-                    </tr>
-                </thead>
-                <tbody id="tabelaDados">
-                    <!-- Os dados serão inseridos pelo usuário -->
-                </tbody>
-            </table>
+            <h2 class="text-center">Usuários Cadastrados</h2>
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered">
+                    <caption>Lista de Usuários</caption>
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Nome</th>
+                            <th>E-mail</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-usuarios">
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
-    
-    <footer>
+    <footer class="bg-dark text-white text-center p-3 mt-4">
         <p>IFRN Campus Santa Cruz</p>
         <p>Trabalho de Autoria Web</p>
         <p>Prof. Marcelo Figueiredo Barbosa Júnior</p>
-        <p>Desenvolvido por: Fabrício Gabriel Maximino Gomes da Silva e João Victor do Nascimento</p>
+        <p>Desenvolvido por: Fabrício Gabriel Maximino Gomes da Silva, João Victor Ferreira do Nascimento, Mateus Ribeiro Almeida</p>
     </footer>
-    
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            function adicionarRegistro() {
-                let nome = document.getElementById("nome").value;
-                let email = document.getElementById("email").value;
-
-                if (nome.trim() === "" || email.trim() === "") {
-                    alert("Por favor, preencha todos os campos!");
-                    return;
-                }
-
-                // Expressão regular para validar email
-                let regexEmail = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
-
-                if (!regexEmail.test(email)) {
-                    alert("Por favor, insira um email válido.");
-                    return;
-                }
-
-                let tabela = document.getElementById("tabelaDados");
-                let linhas = tabela.getElementsByTagName("tr");
-
-                if (linhas.length >= 10) {
-                    tabela.deleteRow(0);
-                }
-
-                let novaLinha = tabela.insertRow();
-                let celulaNome = novaLinha.insertCell(0);
-                let celulaEmail = novaLinha.insertCell(1);
-
-                celulaNome.textContent = nome;
-                celulaEmail.textContent = email;
-
-                document.getElementById("cadastroForm").reset();
-            }
-
-            window.adicionarRegistro = adicionarRegistro;
-        });
-    </script>
 </body>
 </html>

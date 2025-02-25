@@ -1,47 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desenvolvedores</title>
-    <link rel="stylesheet" href="segundo.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
-
-<body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="https://www.youtube.com/@mimmarcelo">Canal do Professor gente boa</a>
-        </ul>
-    </nav>
-
-    <div class="container">
-        <h1>Desenvolvedores do Site:</h1>
-        <div class="developers">
-            <div class="developer">
-                <img src="image.png" alt="Descrição da imagem">
-                <h3>João Victor Ferreira do Nascimento</h3>
-                <p>Parte do HTML / Gosto de comer cocada, baum de mais so</p>
+<body class="container">
+    <header class="bg-primary text-white text-center p-3">
+        <h1>Desenvolvedores do Site</h1>
+        <nav class="nav justify-content-center">
+            <a class="nav-link text-white" href="index.html">Início</a>
+            <a class="nav-link text-white" href="https://www.youtube.com/@mimmarcelo">Canal do Professor</a>
+        </nav>
+    </header>
+    <main class="mt-4">
+        <section class="text-center">
+            <h2>Equipe de Desenvolvimento</h2>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="card p-3">
+                        <img src="image.png" class="card-img-top" alt="Imagem do desenvolvedor">
+                        <div class="card-body">
+                            <h3 class="card-title">João Victor Ferreira do Nascimento</h3>
+                            <p class="card-text">Parte do HTML / Gosto de comer cocada, baum de mais só.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card p-3">
+                        <img src="image.png" class="card-img-top" alt="Imagem do desenvolvedor">
+                        <div class="card-body">
+                            <h3 class="card-title">Fabrício Gabriel Maximino</h3>
+                            <p class="card-text">Parte do CSS / Parece que esse professor dá voltas kk (que é muito inteligente).</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card p-3">
+                        <img src="image.png" class="card-img-top" alt="Imagem do desenvolvedor">
+                        <div class="card-body">
+                            <h3 class="card-title">Mateus Ribeiro Almeida</h3>
+                            <p class="card-text">Parte do Supevisonamento do site / Parece que esse professor dá voltas kk (que é muito inteligente).</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="developer">
-                <img src="image.png" alt="Descrição da imagem">
-                <h3>Fabrício Gabriel Maximino</h3>
-                <p>Parte do CSS / Parece que esse professor é da voltas kk (que é muito inteligente)</p>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <p>IFRN campus Santa Cruz</p>
+        </section>
+    </main>
+    <footer class="bg-dark text-white text-center p-3 mt-4">
+        <p>IFRN Campus Santa Cruz</p>
         <p>Trabalho de Autoria Web</p>
         <p>Prof. Marcelo Figueiredo Barbosa Júnior</p>
         <p>Integrantes do Grupo:</p>
-        <ul>
+        <ul class="list-unstyled">
             <li>João Victor Ferreira do Nascimento</li>
             <li>Mateus Ribeiro Almeida</li>
+            <li>Fabricio Gabriel</li>
         </ul>
     </footer>
 </body>
- 
 </html>
