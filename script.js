@@ -17,4 +17,4 @@ document.getElementById("cadastro-form").addEventListener("submit", function(eve
     document.getElementById("nome").value = "";
     document.getElementById("email").value = "";
 }); 
- 
+  
